@@ -1,5 +1,6 @@
+let tweets = [];
+let tweetsRendered = 0;
 
-// TODO: argument tweet object 
 function createTweet(tweet) {
     const tweetsSection = document.getElementById('tweets');
 
