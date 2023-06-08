@@ -16,6 +16,10 @@
     font-weight: normal;
 }
 
+#tweets .tweet .image {
+    max-width: 100%;
+}
+
 #tweets .tweet .heading .displayName {
     font-weight: 700;
 }
