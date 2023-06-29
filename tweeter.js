@@ -2,29 +2,8 @@ class Tweet {
     constructor(data) {
         this.displayName = data.displayName;
         this.userName = data.userName;
-        this.postedAt = data.postedAt;
         this.content = data.content;
         this.image = data.image;
-    }
-
-    timeAgo() {
-        const now = Date.now();
-        const date = new Date(this.postedAt);
-        
-        const msAgo = now - date;
-        const minutesAgo = Math.round(msAgo / 1000 / 60);
-        
-        if(minutesAgo < 60) {
-            return `${minutesAgo}m`;
-        }
-
-        const hoursAgo = Math.round(minutesAgo / 60);
-        if(hoursAgo < 24) {
-            return `${hoursAgo}h`;
-        }
-
-        const daysAgo = Math.round(hoursAgo / 24);
-        return `${daysAgo}d`;
     }
 
     html() {
@@ -37,7 +16,6 @@ class Tweet {
 
         tweetArticle.querySelector('.displayName').innerHTML = this.displayName;
         tweetArticle.querySelector('.userName').innerHTML = this.userName;
-        tweetArticle.querySelector('.timeAgo').innerHTML = this.timeAgo();
         tweetArticle.querySelector('.content').innerHTML = this.content;
         tweetArticle.querySelector('.image').src = this.image;
 
@@ -47,7 +25,7 @@ class Tweet {
 
 class TweetList {
     constructor() {
-        fetch("./tweets.json")
+        fetch("./tweets2.json")
         .then((response) => response.json())
         .then((data) => this.parse(data));
     }
